@@ -1,0 +1,371 @@
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1200px;
+    }
+}
+@media (min-width: 1400px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px;
+    }
+}
+@media screen and (max-width:1440px){
+    .slot-types{
+        padding-right:24px;
+    }
+    #slots-section .visits-lnk,.home-page .visits-lnk{
+        margin-left:32px;
+    }
+}
+@media screen and (min-width:1279px){
+    .abt-itms ul li span{
+        white-space:nowrap;
+    }
+}
+@media screen and (max-width:1200px){
+    .lv-img{
+        width:140px;
+        height:80px;
+    }
+    .live-item{
+        padding:20px 16px;
+    }
+    .bns-txt{
+        width:auto;
+        font-size:18px;
+        padding-left:16px;
+        padding-right:16px;
+        margin-left:0;
+    }
+    .visits-lnk{
+        margin-left:32px;
+    }
+    div.chart,.graph canvas{
+        width:64px;
+        height:64px;
+    }
+    .graph span{
+        font-size:20px;
+        line-height:64px;
+    }
+    #live-casino .abt-itms ul li span,#slots-section .abt-itms ul li span,.home-page .abt-itms ul li span{
+        font-size:16px;
+    }
+    .rate-stars img{
+        height:24px;
+    }
+    .get-bonus{
+        font-size:18px;
+        min-width:140px;
+    }
+    .slot-types{
+        padding-right:20px;
+    }
+    .last-itms{
+        padding-right:20px;
+    }
+    .chart-rate{
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+        line-height: 64px;
+    }
+}
+@media screen and (max-width:992px){
+    .h1{
+        font-size:32px;
+    }
+    .content-txt{
+        padding-top:24px;
+        font-size:14px;
+        line-height:20px;
+    }
+    .content-txt h2{
+        font-size:24px;
+        margin-bottom:16px;
+    }
+    #privacy-policy,.contact-cover,#about{
+        padding-bottom:54px;
+    }
+    .content-cover,.container{
+        max-width:100%;
+        padding-left:22px;
+        padding-right:22px;
+    }
+    .abt-itms{
+        margin-top:20px;
+    }
+    #about .content-txt{
+        padding-top:32px;
+    }
+    div.chart{
+        display:none;
+    }
+    .live-block{
+        margin-top:40px;
+    }
+    .h4{
+        font-size:18px;
+    }
+    #slots-section .visits-lnk,.home-page .visits-lnk{
+        margin-left:0;
+    }
+    .slot-type{
+        width:72px;
+    }
+    .csn-top-img{
+        margin-top:0;
+    }
+    #last-updated{
+        padding-top:32px;
+    }
+    .home-page #slots-section, .home-page #live-casino{
+        padding-top:48px;
+    }
+    .rate-mobile{
+        display:inline-flex;
+        justify-content:center;
+        align-items:center;
+        position:absolute;
+        right: -12px;
+        top: -20px;
+        width:52px;
+        height:52px;
+        background-color:var(--dark-bg);
+        font:18px 'WorkSans-Medium';
+        color:var(--white);
+        border-radius:50%;
+    }
+    .live-item{
+        margin-top:32px;
+    }
+    .main-popup{
+        padding:20px;
+    }
+    .popup-close{
+        top:8px;
+        right:8px;
+    }
+    .pop-right img{
+        object-fit:contain;
+    }
+    .pop-up .get-bonus{
+        display:inline-block;
+        min-width:160px;
+    }
+    .bonuses-h4{
+        margin-bottom: 28px;
+        max-width:inherit;
+    }
+    .light-mode .home-page{
+        padding-bottom:26px;
+    }
+    .chart-rate{
+        display:none;
+    }
+}
+@media screen and (max-width:767px){
+    #privacy-policy,.contact-cover,#about{
+        padding-top:40px;
+        padding-bottom:44px;
+    }
+    .h1{
+        font-size:26px;
+    }
+    .content-txt{
+        padding-top:16px;
+    }
+    .content-txt h2{
+        font-size:20px;
+        margin-bottom:12px;
+    }
+    .header-right{
+        justify-content:center !important;
+    }
+    #toggle-btn{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .abt-itms ul li span{
+        font-size:16px;
+    }
+    .abt-itms ul li img{
+        height:28px;
+    }
+    .abt-itms ul li:not(:first-child){
+        margin-left:20px;
+    }
+    .live-right,.get-bonus,.vst-casino{
+        display:none;
+    }
+    #live-casino,#slots-section,.home-page{
+        padding-top:26px;
+    }
+    .live-left .h1{
+        margin-bottom:0;
+    }
+    #live-casino .abt-itms,#slots-section .abt-itms,.home-page .abt-itms{
+        margin-top:20px;
+    }
+    .live-item{
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .bns-txt{
+        width:calc(100% - 140px);
+    }
+    .bns-txt p{
+        max-width:100%;
+    }
+    .lv-left,.lv-center{
+        width:100%;
+    }
+    .visits-lnk{
+        margin-left:0;
+    }
+    .rate-stars{
+        justify-content:center !important;
+    }
+    .lv-center{
+        border-top: 1px solid #F4F3F8;
+        padding-top:24px;
+        padding-bottom:8px;
+        margin-top:20px;
+    }
+    .desk-none{
+        display:block;
+    }
+    .lv-right,.vst-website,.visits-lnk{
+        width:100%
+    }
+    .vst-website{
+        margin-top:12px;
+        margin-bottom:20px;
+    }
+    .vst-website:hover{
+        color:var(--dark-bg);
+    }
+    .more-info{
+        color:var(--dark-bg);
+        font:14px "WorkSans-Regular";
+        text-decoration:underline;
+        border:0;
+        background:transparent;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .more-info img{
+        transform:rotate(180deg);
+        margin-right:4px;
+    }
+    .lv-center,.pop-right{
+        display:none;
+        transition:all 0s ease;
+    }
+    .more-info.active img{
+        transform:rotate(0);
+    }
+    .slot-type{
+        width:80px;
+    }
+    .slot-types{
+        padding-right:0;
+    }
+    .updated-date{
+        text-align:left !important;
+        font-size:14px;
+    }
+    #last-updated{
+        padding-top:20px;
+    }
+    .highly-rated{
+        top:5px;
+    }
+    .last-itms li span{
+        font-family: "WorkSans-Medium";
+    }
+    .last-itms li:not(:last-child){
+        margin-bottom:14px;
+    }
+    .pop-up{
+        padding:22px;
+    }
+    .pop-left{
+        padding-top:20px;
+        width:100%;
+    }
+    .bonuses-h4{
+        font-size:24px;
+        line-height:32px;
+    }
+    .leaving{
+        margin-top:36px;
+    }
+}
+@media screen and (max-width:576px){
+    .contact-left ul{
+        margin-top:20px;
+    }
+    .contact-form{
+        padding-top:16oxl
+    }
+    .contact-form input.form-control{
+        height:52px;
+    }
+    .contact-form .form-control,.contact-info{
+        font-size:14px;
+    }
+    .contact-btn{
+        width:100%;
+        font-size:16px;
+    }
+    .abt-itms ul li:last-child{
+        display:none;
+    }
+    .abt-itms{
+        padding-top:16px;
+        padding-bottom:16px;
+    }
+    .slot-types{
+        justify-content:space-between !important;
+    }
+    .slot-type{
+       margin-left:9px;
+       margin-right:9px;
+    }
+    .home-title{
+        font-size:24px;
+    }
+    .home-page #slots-section,.home-page #live-casino{
+        padding-top:40px;
+    }
+}
+@media screen and (max-width:380px){
+    .lv-img{
+        width: 100px;
+        height: 72px;
+    }
+    .bns-txt{
+        width: calc(100% - 100px);
+        padding-right:0;
+        padding-left:16px;
+        font-size:14px;
+    }
+    .vst-website{
+        font-size:16px;
+        height:46px;
+        line-height:46px;
+    }
+}
+@media screen and (max-width:360px){
+    .slot-type{
+        width:calc((100% / 3) - 10px);
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .sltpe-img{
+        width:48px;
+        height:48px;
+    }
+}
