@@ -12,14 +12,16 @@
         </div>
       </div>
       <div class="lv-center text-center toggle-container">
-        <ul class="last-itms list-unstyled">
-          <li v-for="(game,g_index) in item?.games" :key="g_index">
-            <p class="d-flex">
-              <img src="@/assets/img/Tick.svg" alt="">
+        <div class="d-flex justify-content-center slot-types">
+          <div class="slot-type" v-for="(game,g_index) in item?.games" :key="g_index">
+            <a href="#">
+              <div class="sltpe-img">
+                <img :src="game?.image" alt="">
+              </div>
               <span>{{ game?.title }}</span>
-            </p>
-          </li>
-        </ul>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="lv-right d-flex justify-content-end align-items-center">
         <div class="chart-rate">{{ item?.score }}</div>
@@ -37,7 +39,7 @@
 </template>
 <script>
 export default {
-  name: 'info',
+  name: 'icon',
   props: {
     items: {
       type: Array,

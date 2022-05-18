@@ -1,13 +1,4 @@
 const isProduction = process.env.NODE_ENV === 'production'
-
-const axios = {}
-
-if(isProduction){
-  axios.baseURL = process.env.BASE_URL
-}else{
-  axios.proxy = true
-}
-
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -74,7 +65,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios,
+  axios:{
+    baseURL: process.env.BASE_URL
+  },
 
   proxy: isProduction ? {} : {
     '/api/': 'https://bestchoiceshere.com/'
