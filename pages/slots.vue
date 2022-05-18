@@ -49,7 +49,7 @@
   </section>
 </template>
 <script>
-import {mapActions, mapState} from "pinia"
+import {mapActions, mapWritableState} from "pinia"
 import {useStore} from "@/store/store"
 export default {
   name: 'Slots',
@@ -60,7 +60,7 @@ export default {
     await Promise.all(promises)
   },
   computed:{
-    ...mapState(useStore,['home','items'])
+    ...mapWritableState(useStore,['home','items'])
   },
   methods:{
     ...mapActions(useStore,['GET_PAGE','GET_ITEM'])

@@ -25,6 +25,9 @@ export const useStore = defineStore('store',{
       const res = await this.$nuxt.$axios.get(`/api/v1/items/${slug}`)
       this.items = res.data
       return res
+    },
+    async SEND_MESSAGE(form){
+      return await this.$nuxt.$axios.post('/api/v1/contact', form)
     }
   }
 })

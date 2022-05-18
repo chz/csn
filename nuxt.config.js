@@ -32,6 +32,11 @@ export default {
     '@/assets/css/mobile.scss'
   ],
 
+  router: {
+    trailingSlash: undefined,
+    middleware: ['before-route-change']
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
@@ -41,6 +46,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/device',
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
   ],

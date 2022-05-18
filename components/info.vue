@@ -11,12 +11,12 @@
           <p>{{ item?.bonus}}</p>
         </div>
       </div>
-      <div class="lv-center text-center toggle-container">
+      <div class="lv-center text-center toggle-container" v-show="item?.showDetail && item?.features.length">
         <ul class="last-itms list-unstyled">
-          <li v-for="(game,g_index) in item?.games" :key="g_index">
+          <li v-for="(feature,g_index) in item?.features" :key="g_index">
             <p class="d-flex">
               <img src="@/assets/img/Tick.svg" alt="">
-              <span>{{ game?.title }}</span>
+              <span>{{ feature?.title }}</span>
             </p>
           </li>
         </ul>
@@ -27,8 +27,8 @@
           <a :href="item?.url" class="get-bonus">Get Bonus</a>
           <a :href="item?.url" class="vst-casino">Visit Casino</a>
           <a :href="item?.url" class="vst-website desk-none">Visit website</a>
-          <button type="button" class="more-info desk-none" data-open="More information" data-close="Hide">
-            <img src="@/assets/img/chevron.svg" alt=""> <span>More information</span>
+          <button type="button" class="more-info desk-none" data-open="More information" data-close="Hide" @click.prevent="item?.features.length && (item.showDetail = !item.showDetail)">
+            <img src="@/assets/img/chevron.svg" alt=""> <span>{{item.showDetail ? 'Hide' : 'More information'}}</span>
           </button>
         </div>
       </div>
@@ -43,6 +43,11 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  created() {
+    this.items.forEach(item => {
+      this.$set(item, 'showDetail', !this.$device.isMobile)
+    })
   }
 }
 </script>
