@@ -1,44 +1,83 @@
 <template>
-  <header class="main-header">
-    <div class="container">
-      <div class="header-content d-flex justify-content-between align-items-center">
-        <button type="button" class="mobile-menu" @click.prevent="openMobileMenu">
+  <section>
+    <!-- popup -->
+    <div class="main-popup" :class="{'show': hasShowPopup}">
+      <div class="popup-content position-relative" :style="{
+        pointerEvents: hasShowPopup ? 'auto':'none',
+        backgroundImage: `url(${popup?.image})`,
+        backgroundSize: 'cover'
+      }"  v-click-outside="onClickOutside">
+        <div class="pop-up d-flex">
+          <div class="pop-left">
+            <p class="leaving">Already leaving? Get a bonus!</p>
+            <h4 class="bonuses-h4">150% Bonus up to £150 +32 Free Spins</h4>
+            <a :href="popup?.url" class="get-bonus">Get Bonus</a>
+          </div>
+<!--          <div class="pop-right">-->
+<!--            <img src="@/assets/img/popup.png" alt="">-->
+<!--          </div>-->
+        </div>
+        <button type="button" class="popup-close" @click.prevent="onClickOutside">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 23C3.44772 23 3 23.4477 3 24C3 24.5523 3.44772 25 4 25V23ZM28 25C28.5523 25 29 24.5523 29 24C29 23.4477 28.5523 23 28 23V25ZM4 15.5C3.44772 15.5 3 15.9477 3 16.5C3 17.0523 3.44772 17.5 4 17.5V15.5ZM28 17.5C28.5523 17.5 29 17.0523 29 16.5C29 15.9477 28.5523 15.5 28 15.5V17.5ZM4 8C3.44772 8 3 8.44772 3 9C3 9.55228 3.44772 10 4 10V8ZM28 10C28.5523 10 29 9.55228 29 9C29 8.44772 28.5523 8 28 8V10ZM4 25H28V23H4V25ZM4 17.5H28V15.5H4V17.5ZM4 10H28V8H4V10Z" fill="white"/>
+            <path d="M27.0606 7.06066C27.6464 6.47487 27.6464 5.52513 27.0606 4.93934C26.4749 4.35355 25.5251 4.35355 24.9393 4.93934L27.0606 7.06066ZM4.93934 24.9393C4.35355 25.5251 4.35355 26.4749 4.93934 27.0606C5.52513 27.6464 6.47487 27.6464 7.06066 27.0606L4.93934 24.9393ZM7.06068 4.93934C6.47489 4.35355 5.52515 4.35355 4.93936 4.93934C4.35357 5.52513 4.35357 6.47487 4.93936 7.06066L7.06068 4.93934ZM24.9393 27.0606C25.5251 27.6464 26.4749 27.6464 27.0607 27.0606C27.6464 26.4749 27.6464 25.5251 27.0607 24.9393L24.9393 27.0606ZM24.9393 4.93934L4.93934 24.9393L7.06066 27.0606L27.0606 7.06066L24.9393 4.93934ZM4.93936 7.06066L24.9393 27.0606L27.0607 24.9393L7.06068 4.93934L4.93936 7.06066Z" fill="white"/>
           </svg>
         </button>
-        <NuxtLink to="/" class="header-logo">
-          <img src="@/assets/img/logo.svg" alt="" class="dark-logo">
-          <img src="@/assets/img/Logo-light.svg" alt="" class="light-logo">
-        </NuxtLink>
-        <div class="header-right d-flex align-items-center justify-content-end">
-          <nav class="header-nav" :class="mobileMenuVisible ? 'transform00':''">
-            <button type="button" class="mobile-close" @click.prevent="closeMobileMenu">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M27.0606 7.06066C27.6464 6.47487 27.6464 5.52513 27.0606 4.93934C26.4749 4.35355 25.5251 4.35355 24.9393 4.93934L27.0606 7.06066ZM4.93934 24.9393C4.35355 25.5251 4.35355 26.4749 4.93934 27.0606C5.52513 27.6464 6.47487 27.6464 7.06066 27.0606L4.93934 24.9393ZM7.06068 4.93934C6.47489 4.35355 5.52515 4.35355 4.93936 4.93934C4.35357 5.52513 4.35357 6.47487 4.93936 7.06066L7.06068 4.93934ZM24.9393 27.0606C25.5251 27.6464 26.4749 27.6464 27.0607 27.0606C27.6464 26.4749 27.6464 25.5251 27.0607 24.9393L24.9393 27.0606ZM24.9393 4.93934L4.93934 24.9393L7.06066 27.0606L27.0606 7.06066L24.9393 4.93934ZM4.93936 7.06066L24.9393 27.0606L27.0607 24.9393L7.06068 4.93934L4.93936 7.06066Z" fill="white"/>
-              </svg>
-            </button>
-            <ul class="list-unstyled">
-              <li><NuxtLink to="/about">About us</NuxtLink></li>
-              <li><NuxtLink to="/slots">Slots</NuxtLink></li>
-              <li><NuxtLink to="/live-casinos">Live Casinos</NuxtLink></li>
-              <li><NuxtLink to="/contact">Contact</NuxtLink></li>
-            </ul>
-          </nav>
-        </div>
       </div>
     </div>
-  </header>
+    <header class="main-header">
+      <div class="container">
+        <div class="header-content d-flex justify-content-between align-items-center">
+          <button type="button" class="mobile-menu" @click.prevent="openMobileMenu">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 23C3.44772 23 3 23.4477 3 24C3 24.5523 3.44772 25 4 25V23ZM28 25C28.5523 25 29 24.5523 29 24C29 23.4477 28.5523 23 28 23V25ZM4 15.5C3.44772 15.5 3 15.9477 3 16.5C3 17.0523 3.44772 17.5 4 17.5V15.5ZM28 17.5C28.5523 17.5 29 17.0523 29 16.5C29 15.9477 28.5523 15.5 28 15.5V17.5ZM4 8C3.44772 8 3 8.44772 3 9C3 9.55228 3.44772 10 4 10V8ZM28 10C28.5523 10 29 9.55228 29 9C29 8.44772 28.5523 8 28 8V10ZM4 25H28V23H4V25ZM4 17.5H28V15.5H4V17.5ZM4 10H28V8H4V10Z" fill="white"/>
+            </svg>
+          </button>
+          <NuxtLink to="/" class="header-logo">
+            <img src="@/assets/img/logo.svg" alt="" class="dark-logo">
+            <img src="@/assets/img/Logo-light.svg" alt="" class="light-logo">
+          </NuxtLink>
+          <div class="header-right d-flex align-items-center justify-content-end">
+            <nav class="header-nav" :class="mobileMenuVisible ? 'transform00':''">
+              <button type="button" class="mobile-close" @click.prevent="closeMobileMenu">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M27.0606 7.06066C27.6464 6.47487 27.6464 5.52513 27.0606 4.93934C26.4749 4.35355 25.5251 4.35355 24.9393 4.93934L27.0606 7.06066ZM4.93934 24.9393C4.35355 25.5251 4.35355 26.4749 4.93934 27.0606C5.52513 27.6464 6.47487 27.6464 7.06066 27.0606L4.93934 24.9393ZM7.06068 4.93934C6.47489 4.35355 5.52515 4.35355 4.93936 4.93934C4.35357 5.52513 4.35357 6.47487 4.93936 7.06066L7.06068 4.93934ZM24.9393 27.0606C25.5251 27.6464 26.4749 27.6464 27.0607 27.0606C27.6464 26.4749 27.6464 25.5251 27.0607 24.9393L24.9393 27.0606ZM24.9393 4.93934L4.93934 24.9393L7.06066 27.0606L27.0606 7.06066L24.9393 4.93934ZM4.93936 7.06066L24.9393 27.0606L27.0607 24.9393L7.06068 4.93934L4.93936 7.06066Z" fill="white"/>
+                </svg>
+              </button>
+              <ul class="list-unstyled">
+                <li><NuxtLink to="/about">About us</NuxtLink></li>
+                <li><NuxtLink to="/slots">Slots</NuxtLink></li>
+                <li><NuxtLink to="/live-casinos">Live Casinos</NuxtLink></li>
+                <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
 </template>
 <script>
+import {useStore} from "@/store/store"
 import{useUiStore} from "@/store/ui"
 import {mapWritableState} from 'pinia'
 export default {
   name: 'Header',
   computed:{
-    ...mapWritableState(useUiStore, ['mobileMenuVisible'])
+    ...mapWritableState(useUiStore, ['mobileMenuVisible']),
+    ...mapWritableState(useStore, ['popup']),
+    hasShowPopup(){
+      const uiStore = useUiStore()
+      return uiStore.showPopup
+    }
   },
   methods: {
+    onClickOutside(){
+      const uiStore = useUiStore()
+      if(uiStore.showPopup){
+        uiStore.showPopup = false
+        localStorage.setItem('popup', 'shown')
+      }
+    },
     openMobileMenu(){
       this.mobileMenuVisible = true
     },
